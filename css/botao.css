@@ -1,0 +1,31 @@
+.btn {
+    width:150px;
+    height: 49px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--color-btn--);
+    color: var(--color-light--);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: var(--color-btn-hover--);
+}
+
+.btn.transparent {
+    margin: 0;
+    background: none;
+    border: 2px solid var(--color-light--);
+    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.btn.transparent:hover {
+    background-color: var(--color-light--);
+    color: var(--color-btn--);
+}

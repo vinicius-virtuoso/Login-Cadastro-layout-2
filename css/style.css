@@ -1,29 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-    --color-light--:#fff;
-    --color-light-low1--:#f0f0f0;
-    --color-light-low2--:#aaa;
-    --color-light-low3--:#acacac;
-    --color-dark--:#333;
-    --color-dark-light--:#777;
-    --color-btn--: #1370ae;
-    --color-btn-hover--: #4d84e2;
-    --bg-color-light-: #04befe;
-    --bg-color-dark--: #4481eb;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   
-}
-
-body, input{
-     font-family: 'Poppins', sans-serif;
-}
-
+/* ?? Configuração de movimentão e outros ?? */
 .container {
     position: relative;
     width: 100%;
@@ -31,12 +7,14 @@ body, input{
     background-color: var(--color-light--);
     overflow: hidden;
 }
+
+/* plano de fundo das imagens */
 .container::before {
     content: '';
     position: absolute;
     width: 2000px;
     height:2000px;
-    border-radius:20%;
+    border-radius:5%;
     background: linear-gradient(-45deg, var(--bg-color-light-), var(--bg-color-dark--));
     top:-10%;
     right:48%;
@@ -47,7 +25,9 @@ body, input{
     -moz-box-shadow: 0px 0px 56px 6px rgba(112, 112, 112, 0.75);
     box-shadow: 0px 0px 56px 6px rgba(112, 112, 112, 0.75);
 }
+/* Fim plano de fundo das imagens */
 
+/* tamanho e posição do form na tela */
 .form-container {
     position: absolute;
     width: 100%;
@@ -55,6 +35,10 @@ body, input{
     top: 0;
     left: 0;
 }
+/* Fim tamanho e posição do form na tela */
+
+
+/* ?? posição do formulário ?? */
 .entrar-cadastrar{
     position: absolute;
     top: 50%;
@@ -64,8 +48,12 @@ body, input{
     display: grid;
     grid-template-columns: 1fr;
     z-index: 5;
-    transition: 1s 0.7s ease-in-out;
+    transition: 1.8s 0.7s ease-in-out;
 }
+
+/* ?? Fim posição do formulário ?? */
+
+/* ?? Fim da Configuração de formulário ?? */
 
 form {
     display: flex;
@@ -87,14 +75,14 @@ form.cadastrar-form {
     opacity: 0;
 }
 .titulo {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     color: var(--color-dark-light--);
     margin-bottom: 10px;
 }
 .box-input {
     max-width: 380px;
     width: 100%;
-    height: 55px;
+    height: 65px;
     background-color: var(--color-light-low1--);
     margin:10px 0;
     border-radius: 10px;
@@ -111,6 +99,8 @@ form.cadastrar-form {
 }
 
 .box-input input {
+    font-size: 1rem;
+    padding: 0 2%;
     background: none;
     outline: none;
     border: none;
@@ -123,25 +113,49 @@ form.cadastrar-form {
     color: var(--color-light-low2--);
     font-weight: 500;
 }
-
-.btn {
-    width:150px;
-    height: 49px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: var(--color-btn--);
+.link {
+    max-width: 380px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background:none;
+    height: 3px;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+a.link-recovery{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+   text-decoration: none;
+   color: var(--color-light-low3--);
+   transition: 0.5s;
+}
+a.link-recovery i {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color:var(--color-light-low3--);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 10px;
+    margin:0 5px;
     color: var(--color-light--);
-    text-transform: uppercase;
-    font-weight: 600;
-    margin: 10px 0;
     transition: 0.5s;
 }
-
-.btn:hover {
-    background-color: var(--color-btn-hover--);
+a.link-recovery:hover{
+   text-decoration: none;
+   color: var(--color-btn--);
 }
+a.link-recovery:hover > i{
+   text-decoration: none;
+   background-color: var(--color-btn--);
+}
+/* ?? Fim da Configuração de formulário ?? */
+
+/* ?? Configuração de icones de redes sociais ?? */
 
 .redes-sociais {
     padding: .7rem;
@@ -180,6 +194,10 @@ form.cadastrar-form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+/* ?? Fim da Configuração de icones de redes sociais ?? */
+
+/* ?? Quadro ao lado do form ?? */
+
 .quadro {
     display: flex;
     flex-direction: column;
@@ -202,6 +220,7 @@ form.cadastrar-form {
     transition: .4s .6s ease-in-out;
 }
 .quadro h3 {
+    text-transform: uppercase;
     font-weight: 600;
     line-height: 1;
     font-size: 1.7em;
@@ -211,18 +230,9 @@ form.cadastrar-form {
     font-size: 0.95rem;
 }
 
-.btn.transparent {
-    margin: 0;
-    background: none;
-    border: 2px solid var(--color-light--);
-    font-weight: 600;
-    font-size: 0.8rem;
-    font-weight: 700;
-}
-.btn.transparent:hover {
-    background-color: var(--color-light--);
-    color: var(--color-btn--);
-}
+/* ?? Fim do Quadro ao lado do form ?? */
+
+/* ?? Configuração da imagens bg ?? */
 
 .imagem {
     width: 100%;
@@ -230,9 +240,21 @@ form.cadastrar-form {
 }
 .rigth-quadro .conteudo, .rigth-quadro .imagem{
     transform: translateX(800px);
+    text-align: center;
 }
+/* ?? Fim Configuração da imagens bg ?? */
 
 /* ?? Animação ?? */
+
+.container.modo-entrar::after {
+    transition:2s;
+    transform: translate(100%,-50%);
+    width: 100%;
+    max-width: 290px;
+    right:105%;
+    justify-content: center;
+    background:var(--bg--footer-left--);
+}
 
 .container.modo-entrar::before {
     transform: translate(100%,-50%);
@@ -264,3 +286,4 @@ form.cadastrar-form {
     z-index: 2;
     opacity: 1;
 }
+/* ?? Fim da Animação ?? */
